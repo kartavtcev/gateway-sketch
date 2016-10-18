@@ -3,7 +3,7 @@ Gateway Debit sketch
 
 ## Sample REST API 
 * TopUp, Withdraw, Sale, Refund transactions
-* Accepted, Pending, Rejected, Pending transaction statuses
+* Accepted, Pending, Rejected transaction statuses
 * multi-national currencies in separate wallets by currency, by client
 * test coverage with *ScalaTest*
 
@@ -40,7 +40,7 @@ http://localhost:9000/v1/clients/ <- POST
 
 Request: { "name": "Smith Test" }. Content-Type application/json
 
-Respone:
+Response:
 {
   "id": "45f535d0-7efb-4471-ba82-c61f5e0a4cd6",
   "name": "Smith Test",
@@ -51,10 +51,10 @@ Respone:
 ## Not implemented:
 * no auth security
 * no transactions rollback in terms of business transactions
-* no persistent storage - (like in memory postgres)
+* no persistent storage
 * no proper error handling: now is NoContent for all tech + business exceptions (GateWay typed exception) + technical error message
 * no Futures - only async java collection wrapped to scala
 * no custom actors declared in code
 * no docker
 * no proper tests coverage - just a few sample unit tests (all green)
-* not much "toxic" Monads, only basics like [Option]
+* no "toxic" Monads, only basics like [Option]
