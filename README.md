@@ -14,7 +14,7 @@ Gateway Debit sketch
 * akka.http 2.4.10
 * scalatest 3.0.0
 
-## REST API (check tests for sample routes):
+## REST API (check tests for sample routes)
 Version Prefix: /v1/
 ```
 /clients
@@ -48,7 +48,7 @@ Response:
 }
 ``` 
 
-## Not implemented:
+## Not implemented
 * no auth security
 * no transactions rollback in terms of business transactions
 * no persistent storage
