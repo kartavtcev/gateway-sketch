@@ -54,10 +54,16 @@ sealed class Context private(){
 }
 
 object Context {
-  private var _instance : Context = null
-  def instance() = {
-    if(_instance == null)
-      _instance = new Context()
-    _instance
+  private var _instanceProd : Context = null
+  private var _instanceTest : Context = null
+  def instanceProd() = {
+    if(_instanceProd == null)
+      _instanceProd = new Context()
+    _instanceProd
+  }
+  def instanceTest() = {
+    if(_instanceTest == null)
+      _instanceTest = new Context()
+    _instanceTest
   }
 }

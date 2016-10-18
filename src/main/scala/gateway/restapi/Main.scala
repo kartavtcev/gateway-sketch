@@ -17,9 +17,9 @@ object Main extends App with Config {
   implicit val log: LoggingAdapter = Logging(actorSystem, getClass)
   implicit val materializer: ActorMaterializer = ActorMaterializer()
 
-  val clientsService = new ClientsService(Context.instance)
-  var walletsService = new WalletsService(Context.instance)
-  var transactionService = new TransactionsService(Context.instance, walletsService)
+  val clientsService = new ClientsService(Context.instanceProd)
+  var walletsService = new WalletsService(Context.instanceProd)
+  var transactionService = new TransactionsService(Context.instanceProd, walletsService)
 
   val httpService = new HttpService(clientsService, transactionService, walletsService)
 

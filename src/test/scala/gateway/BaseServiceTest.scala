@@ -17,17 +17,17 @@ trait BaseServiceTest extends WordSpec with Matchers with ScalatestRouteTest wit
   implicit val actorSystem = ActorSystem("gateway-sketch-rest-api-test")
   implicit val log: LoggingAdapter = Logging(actorSystem, getClass)
 
-  val clientsService = new ClientsService(Context.instance)
-  var walletsService = new WalletsService(Context.instance)
-  var transactionService = new TransactionsService(Context.instance, walletsService)
+  val clientsService = new ClientsService(Context.instanceTest)
+  var walletsService = new WalletsService(Context.instanceTest)
+  var transactionService = new TransactionsService(Context.instanceTest, walletsService)
   val httpService = new HttpService(clientsService, transactionService, walletsService)
 
-  def cleanContext : Unit = { Context.instance.clean() } // todo: replace this hack ro reset/clear Context with better language/scala test feature
+  def cleanContext : Unit = { Context.instanceTest.clean() } // todo: replace this hack ro reset/clear Context with better language/scala test feature
   def provisionClientsList(size: Int): Seq[ClientEnitity] = {
     (1 to size).map { _ =>
       clientsService.createClient(ClientEnitity(None, Random.nextString(10)))
     }
-    Context.instance.getClients
+    Context.instanceTest.getClients
   }
   def getTransactionService = transactionService
 }
