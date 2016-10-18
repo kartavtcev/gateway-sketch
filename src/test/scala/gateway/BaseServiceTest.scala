@@ -18,8 +18,8 @@ trait BaseServiceTest extends WordSpec with Matchers with ScalatestRouteTest wit
   implicit val log: LoggingAdapter = Logging(actorSystem, getClass)
 
   val clientsService = new ClientsService(Context.instanceTest)
-  var walletsService = new WalletsService(Context.instanceTest)
-  var transactionService = new TransactionsService(Context.instanceTest, walletsService)
+  val walletsService = new WalletsService(Context.instanceTest)
+  val transactionService = new TransactionsService(Context.instanceTest, walletsService)
   val httpService = new HttpService(clientsService, transactionService, walletsService)
 
   def cleanContext : Unit = { Context.instanceTest.clean() } // todo: replace this hack ro reset/clear Context with better language/scala test feature

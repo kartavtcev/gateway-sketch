@@ -18,8 +18,8 @@ object Main extends App with Config {
   implicit val materializer: ActorMaterializer = ActorMaterializer()
 
   val clientsService = new ClientsService(Context.instanceProd)
-  var walletsService = new WalletsService(Context.instanceProd)
-  var transactionService = new TransactionsService(Context.instanceProd, walletsService)
+  val walletsService = new WalletsService(Context.instanceProd)
+  val transactionService = new TransactionsService(Context.instanceProd, walletsService)
 
   val httpService = new HttpService(clientsService, transactionService, walletsService)
 

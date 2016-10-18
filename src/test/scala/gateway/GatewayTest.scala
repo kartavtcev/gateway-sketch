@@ -14,7 +14,7 @@ class GatewayTest extends BaseServiceTest {
   "Gateway" should {
 
     "process transaction" in new Context {
-      var testClient = testClients(0)
+      val testClient = testClients(0)
       val amount: BigDecimal = 250.0
       val url = s"/gateway/process?paymenttype=topup&issuer=${testClient.id.get}&amount=${amount.toString}"
 
@@ -26,8 +26,8 @@ class GatewayTest extends BaseServiceTest {
     }
 
     "return client's wallet with correct balance and default USD currency" in new Context { // aka user story
-      var testClientFrom = testClients(0)
-      var testClientTo = testClients(1)
+      val testClientFrom = testClients(0)
+      val testClientTo = testClients(1)
       val amountAll: BigDecimal = 250.0
       val amount1: BigDecimal = 100.0
       val amount2: BigDecimal = 50.0
@@ -66,7 +66,7 @@ class GatewayTest extends BaseServiceTest {
     }
 
     "reject < 0 balance" in new Context {
-      var testClientFrom = testClients(0)
+      val testClientFrom = testClients(0)
       val amount: BigDecimal = 100.0
 
       val urlTopUp = s"/gateway/process?paymenttype=withdraw&issuer=${testClientFrom.id.get}&amount=${amount.toString}"
