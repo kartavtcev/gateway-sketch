@@ -1,7 +1,7 @@
 package gateway.restapi.services
 
 import gateway.restapi.domain.TransactionCurrency._
-import gateway.restapi.domain.context.StorageContext
+import gateway.restapi.domain.storagecontext.StorageContext
 import gateway.restapi.domain.{TransactionEntity, TransactionStatus, TransactionType, WalletEntity}
 import gateway.restapi.utils.PredefGateway
 

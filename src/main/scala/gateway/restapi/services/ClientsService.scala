@@ -1,7 +1,7 @@
 package gateway.restapi.services
 
 import gateway.restapi.domain.ClientModelUpdate
-import gateway.restapi.domain.context.StorageContext
+import gateway.restapi.domain.storagecontext.StorageContext
 import gateway.restapi.domain.ClientEnitity
 
 class ClientsService(context: StorageContext)  {

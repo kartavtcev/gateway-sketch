@@ -5,7 +5,7 @@ import akka.event.{Logging, LoggingAdapter}
 import akka.http.scaladsl.testkit.ScalatestRouteTest
 import de.heikoseeberger.akkahttpcirce.CirceSupport
 import gateway.restapi.domain.ClientEnitity
-import gateway.restapi.domain.context.StorageContext
+import gateway.restapi.domain.storagecontext.StorageContext
 import gateway.restapi.http.HttpService
 import gateway.restapi.services.{ClientsService, TransactionsService, WalletsService}
 import org.scalatest._

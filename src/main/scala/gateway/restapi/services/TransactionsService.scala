@@ -1,7 +1,7 @@
 package gateway.restapi.services
 
 import gateway.restapi.domain._
-import gateway.restapi.domain.context.StorageContext
+import gateway.restapi.domain.storagecontext.StorageContext
 import gateway.restapi.utils.PredefGateway
 
 class TransactionsService(context: StorageContext, walletsService: WalletsService)

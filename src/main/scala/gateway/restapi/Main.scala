@@ -5,7 +5,7 @@ import akka.actor.ActorSystem
 import akka.event.{Logging, LoggingAdapter}
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
-import gateway.restapi.domain.context.StorageContext
+import gateway.restapi.domain.storagecontext.StorageContext
 import gateway.restapi.http.HttpService
 import gateway.restapi.services.{ClientsService, TransactionsService, WalletsService}
 import gateway.restapi.utils.Config

@@ -1,4 +1,4 @@
-package gateway.restapi.domain.context
+package gateway.restapi.domain.storagecontext
 
 import java.util.concurrent.ConcurrentHashMap
 
