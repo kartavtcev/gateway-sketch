@@ -1,10 +1,10 @@
 package gateway.restapi.services
 
 import gateway.restapi.domain._
-import gateway.restapi.domain.context.Context
+import gateway.restapi.domain.context.StorageContext
 import gateway.restapi.utils.PredefGateway
 
-class TransactionsService(context: Context, walletsService: WalletsService)
+class TransactionsService(context: StorageContext, walletsService: WalletsService)
 {
   def processTransaction(model: TransactionModel): Option[TransactionEntity] = {
 

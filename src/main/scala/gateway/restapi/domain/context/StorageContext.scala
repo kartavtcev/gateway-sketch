@@ -9,7 +9,7 @@ import gateway.restapi.domain._
 
 // todo: could split context to clients and transactions contexts to make separation of concerns cleaner
 // todo: snapshot on each transaction to NoSql storage like MongoDB (good for JSON) or Cassandra (good for scalability / clusters)
-sealed class Context private(){
+sealed class StorageContext private(){
   private val clients: concurrent.Map[String, ClientEnitity] = new ConcurrentHashMap[String, ClientEnitity]().asScala
   private val transactions: concurrent.Map[String, TransactionEntity] = new ConcurrentHashMap[String, TransactionEntity]().asScala
 
@@ -54,17 +54,17 @@ sealed class Context private(){
   }
 }
 
-object Context {
-  private var _instanceProd : Context = null
-  private var _instanceTest : Context = null
+object StorageContext {
+  private var _instanceProd : StorageContext = null
+  private var _instanceTest : StorageContext = null
   def instanceProd() = {
     if(_instanceProd == null)
-      _instanceProd = new Context()
+      _instanceProd = new StorageContext()
     _instanceProd
   }
   def instanceTest() = {
     if(_instanceTest == null)
-      _instanceTest = new Context()
+      _instanceTest = new StorageContext()
     _instanceTest
   }
 }

@@ -5,7 +5,7 @@ import akka.actor.ActorSystem
 import akka.event.{Logging, LoggingAdapter}
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
-import gateway.restapi.domain.context.Context
+import gateway.restapi.domain.context.StorageContext
 import gateway.restapi.http.HttpService
 import gateway.restapi.services.{ClientsService, TransactionsService, WalletsService}
 import gateway.restapi.utils.Config
@@ -17,9 +17,9 @@ object Main extends App with Config {
   implicit val log: LoggingAdapter = Logging(actorSystem, getClass)
   implicit val materializer: ActorMaterializer = ActorMaterializer()
 
-  val clientsService = new ClientsService(Context.instanceProd)
-  val walletsService = new WalletsService(Context.instanceProd)
-  val transactionService = new TransactionsService(Context.instanceProd, walletsService)
+  val clientsService = new ClientsService(StorageContext.instanceProd)
+  val walletsService = new WalletsService(StorageContext.instanceProd)
+  val transactionService = new TransactionsService(StorageContext.instanceProd, walletsService)
 
   val httpService = new HttpService(clientsService, transactionService, walletsService)
 

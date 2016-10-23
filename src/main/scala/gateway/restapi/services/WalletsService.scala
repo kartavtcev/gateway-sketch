@@ -1,11 +1,11 @@
 package gateway.restapi.services
 
 import gateway.restapi.domain.TransactionCurrency._
-import gateway.restapi.domain.context.Context
+import gateway.restapi.domain.context.StorageContext
 import gateway.restapi.domain.{TransactionEntity, TransactionStatus, TransactionType, WalletEntity}
 import gateway.restapi.utils.PredefGateway
 
-class WalletsService(context: Context) {
+class WalletsService(context: StorageContext) {
 
   // todo: Now wallet is built dynamically to avoid transactions / collections sync (aka centralized transactions storage). Probably separate storage would improve performance.
   private def buildWalletByUserIdAndCurrency(clientId: String, currency: TransactionCurrency): WalletEntity =  {
