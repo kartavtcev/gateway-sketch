@@ -1,4 +1,4 @@
-package gateway
+package gateway.restapi
 
 import akka.actor.ActorSystem
 import akka.event.{Logging, LoggingAdapter}

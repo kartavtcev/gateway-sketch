@@ -1,4 +1,4 @@
-package gateway
+package gateway.restapi
 
 import akka.http.scaladsl.model.StatusCodes._
 import gateway.restapi.domain.{TransactionCurrency, TransactionModel, WalletModel}

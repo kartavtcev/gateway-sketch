@@ -1,4 +1,4 @@
-package gateway
+package gateway.restapi
 
 import gateway.restapi.domain.{TransactionCurrency, TransactionModel, TransactionStatus, WalletModel}
 import io.circe.generic.auto._

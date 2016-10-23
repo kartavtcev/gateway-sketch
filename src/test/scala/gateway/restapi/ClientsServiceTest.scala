@@ -1,4 +1,4 @@
-package gateway
+package gateway.restapi
 
 import akka.http.scaladsl.model.{HttpEntity, MediaTypes}
 import gateway.restapi.domain.ClientEnitity
