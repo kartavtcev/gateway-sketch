@@ -52,7 +52,7 @@ Response:
 * no auth security
 * no transactions rollback in terms of business transactions
 * no persistent storage
-* no proper error handling: now is NoContent for all tech + business exceptions (GateWay typed exception) + technical error message
+* no proper error handling: now is BadRequest for all tech + business exceptions (GateWay typed exception) + technical error message
 * no Futures - only async java collection wrapped to scala
 * no custom actors declared in code
 * no docker

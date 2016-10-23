@@ -1,5 +1,6 @@
 package gateway.restapi
 
+import scala.concurrent.ExecutionContext
 import akka.actor.ActorSystem
 import akka.event.{Logging, LoggingAdapter}
 import akka.http.scaladsl.Http
@@ -9,7 +10,6 @@ import gateway.restapi.http.HttpService
 import gateway.restapi.services.{ClientsService, TransactionsService, WalletsService}
 import gateway.restapi.utils.Config
 
-import scala.concurrent.ExecutionContext
 
 object Main extends App with Config {
   implicit val actorSystem = ActorSystem("gateway-sketch-rest-api")

@@ -8,8 +8,8 @@ import gateway.restapi.domain.ClientEnitity
 import gateway.restapi.domain.context.Context
 import gateway.restapi.http.HttpService
 import gateway.restapi.services.{ClientsService, TransactionsService, WalletsService}
-
 import org.scalatest._
+
 import scala.util.Random
 
 trait BaseServiceTest extends WordSpec with Matchers with ScalatestRouteTest with CirceSupport {
