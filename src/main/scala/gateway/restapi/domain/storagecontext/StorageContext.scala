@@ -48,7 +48,7 @@ sealed class StorageContext private(){
       }
     }
     catch {
-      case _: Throwable => return false
+      case _: Exception => return false
     }
   }
 }
