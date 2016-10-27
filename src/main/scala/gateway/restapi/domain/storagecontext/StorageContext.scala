@@ -50,7 +50,6 @@ sealed class StorageContext private(){
     catch {
       case _: Throwable => return false
     }
-     getClientById(id.get) != None
   }
 }
 
